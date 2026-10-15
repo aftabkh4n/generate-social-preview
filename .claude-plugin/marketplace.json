@@ -1,7 +1,7 @@
 {
   "name": "generate-social-preview",
   "metadata": {
-    "description": "Social preview generation using references from the project and available image tools."
+    "description": "Social preview generation for your GitHub project."
   },
   "owner": {
     "name": "morluto"
