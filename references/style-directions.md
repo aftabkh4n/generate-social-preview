@@ -8,6 +8,8 @@ Use flat color fields, bitmap or pixel-display typography, hard-edged shadows, c
 
 Positive style reference: [retro-editorial.png](../assets/style-references/retro-editorial.png)
 
+Source: Open SaaS artwork by [Vince Canger (@vincanger)](https://github.com/vincanger), shared in [How I promoted my open source repo to 6k stars in 6 months](https://dev.to/wasp/how-i-promoted-my-open-source-repo-to-6k-stars-in-6-months-3li9).
+
 Treat the image as style-only. Do not copy its `OPEN SAAS` branding, wording, React/NodeJS copy, screenshots, palette, or exact split layout. Extract principles such as strong type hierarchy, flat blocks, purposeful crops, and limited color.
 
 Avoid gradients, glossy 3D objects, generic dashboards, and fake terminal decoration.

@@ -61,6 +61,10 @@ These images are **style references**, not templates to reproduce:
 | --- | --- |
 | ![Flat color blocks and pixel typography](assets/style-references/retro-editorial.png) | ![Command, inspection views, and an ordered workflow](assets/style-references/evidence-workflow.png) |
 
+Credit to [Vince Canger (@vincanger)](https://github.com/vincanger) for the
+Open SaaS artwork used as the retro editorial reference, shared in his original
+post, [How I promoted my open source repo to 6k stars in 6 months](https://dev.to/wasp/how-i-promoted-my-open-source-repo-to-6k-stars-in-6-months-3li9).
+
 ## Normalize an existing image
 
 ```bash
