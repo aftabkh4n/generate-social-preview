@@ -2,7 +2,7 @@
 
 These are optional starting points. Choose a visual treatment that fits the project's audience, identity, and message; a direction outside this list may fit better.
 
-Choose what to show separately from how to style it. Typography, a symbol, an illustration, an interface, an output, or a sequence can each work. Use a workflow only when the steps are central to the message. See [examples.md](examples.md) for two project-specific references.
+Start with useful visual references from the project. If its existing images do not fit the preview, develop a relevant idea from its purpose, examples, or domain. Choose how to style that material separately. Typography, a symbol, an illustration, an interface, an output, or a sequence can each work. Use a workflow only when the steps are central to the message. See [examples.md](examples.md) for two project-specific references.
 
 ## Retro editorial
 

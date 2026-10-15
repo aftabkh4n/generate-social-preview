@@ -1,8 +1,10 @@
 # Generate Social Preview
 
 A Codex skill for creating social preview images grounded in what a repository
-actually does. It reads the project, shapes concise copy, chooses a visual
-direction, and produces a card that stays readable at thumbnail size.
+actually does. It looks for relevant images and examples in the README, docs,
+and repository, shapes concise copy, and produces a card that stays readable
+at thumbnail size. When existing material does not fit, it develops a visual
+idea grounded in the project's purpose.
 
 Use it for GitHub repository previews, package pages, launch posts, and link
 cards for skills, libraries, developer tools, SaaS products, and other projects.

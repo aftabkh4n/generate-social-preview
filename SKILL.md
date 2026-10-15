@@ -9,25 +9,26 @@ Produce a legible social card grounded in the project's purpose, audience, and i
 
 ## Workflow
 
-1. Inspect the primary README, relevant package or skill metadata, docs, and any existing brand assets or screenshots. Establish what the project offers and who it serves. Prefer source-owned claims over invented positioning.
+1. Inspect the primary README, relevant package or skill metadata, and docs. Establish what the project offers and who it serves. Follow relevant image links in the README and docs, and look for screenshots, illustrations, example outputs, demos, and brand assets in the repository. Visually inspect promising candidates rather than judging from filenames. Prefer source-owned claims over invented positioning.
 2. Identify:
    - product name;
    - one short category or promise;
    - a supporting line if useful;
+   - useful project references and what each contributes to the preview;
    - the most useful way to communicate the project visually: typography, a symbol, an illustration, a real interface, an output, or a sequence.
-3. Choose a composition and visual style that fit that message. A skill may be best represented by its purpose and a memorable illustration; a SaaS product by its interface or user outcome; a library by what it enables. Show a sequence only when understanding the steps helps the audience. Read [references/style-directions.md](references/style-directions.md) for optional starting points. Read [references/examples.md](references/examples.md) only when concrete examples would help. Use bundled images as labeled references, with composition chosen for the current project.
+3. Select references for their relevance and visual usefulness. Prefer suitable material from the project; an existing image need not be included merely because it exists. If it does not fit, develop an illustration, metaphor, or other visual idea grounded in the project's actual purpose, examples, or domain. Choose a composition and style that serve that idea. Show a sequence only when understanding the steps helps the audience. Read [references/style-directions.md](references/style-directions.md) for optional starting points and [references/examples.md](references/examples.md) when examples would help. Bundled references illustrate choices for other projects.
 4. Flag copy that mixes incompatible levels of abstraction. Prefer concrete audience language over implementation protocols unless the protocol itself is the product.
 5. Propose concise copy before generation when wording is unsettled. Keep the social card scannable at thumbnail size:
    - one dominant product name;
    - one short headline;
    - at most two brief supporting lines.
-6. Treat supplied images explicitly as either edit targets or style references. Preserve edit invariants. For style references, borrow broad visual principles without reproducing branding, copy, screenshots, or exact layout.
+6. Label each selected image by role: edit target, project reference, or style reference. Include useful reference images as inputs to the image generator. Preserve edit invariants. Project references may supply recognizable imagery, interface details, outputs, or brand cues for the featured project. For references from other projects, borrow broad visual principles without reproducing their branding, copy, screenshots, or exact layout.
 7. Generate a 2:1 landscape image with safe margins, strong contrast, restrained detail, and a clear project identity. A typographic card can be sufficient; use screenshots, artifacts, or diagrams when they help communicate the project. Require all caller-visible text verbatim and prohibit extra marketing copy.
 8. Inspect the result at native size and as a thumbnail. Check spelling, hierarchy, typographic cohesion, contrast, cropping, unsupported claims, accidental logos, artifacts, and the genericity gate below.
 9. Iterate one variable at a time: copy, palette, composition, or imagery.
 10. Save project-bound candidates inside the repository without overwriting an existing asset. Use a descriptive versioned name.
 11. Normalize the selected image to 1280x640 with `scripts/normalize-preview.sh` when the target is a GitHub social preview.
-12. Report the saved path, dimensions, final copy, style direction, palette, and whether the built-in image generator or an explicitly approved fallback was used.
+12. Report the saved path, dimensions, final copy, style direction, palette, references used or the project-grounded visual idea, and whether the built-in image generator or an explicitly approved fallback was used.
 
 ## Prompt Shape
 
@@ -37,7 +38,8 @@ Use the image-generation skill's prompt schema. Include these constraints when r
 Use case: ads-marketing
 Asset type: repository social preview, wide 2:1 landscape
 Primary request: <product-specific visual direction>
-Input images: <label each image as edit target or style reference>
+Input images: <paths to selected images, labeled as edit target, project reference, or style reference>
+Reference use: <what to preserve, reuse, or borrow from each image>
 Subject: <what the project offers and who it serves>
 Style direction: <visual treatment and medium suited to this project>
 Visual thesis: <the idea to communicate through type, illustration, interface, or other suitable imagery>
@@ -72,7 +74,7 @@ For edits, repeat: `Change only <requested variable>; keep <invariants> unchange
 
 Reject and revise a draft when its copy and visual treatment fail to communicate this project's purpose or identity.
 
-- Project specificity can come from clear positioning, distinctive typography, a relevant illustration or symbol, or a recognizable interface or output. Choose what serves the message.
+- Check that the imagery connects to something concrete in the project: a useful source image, an actual example or output, or a visual idea grounded in its purpose or domain. Typography can carry the design when imagery adds little, with copy and brand cues providing that connection.
 - Check that any depicted interface, artifact, or sequence is grounded in the project. A repository having a workflow is insufficient reason to make the card a workflow diagram.
 - Prefer a distinctive medium and composition over decorative complexity.
 - Avoid glossy portals, funnels, glowing orbs, neural-network webs, floating UI cards, holographic projections, empty dark grids, and blue-purple neon by default. Use one only when it literally explains the product.

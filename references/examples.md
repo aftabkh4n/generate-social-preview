@@ -23,10 +23,12 @@ This reference was used for [REA](https://github.com/morluto/rea). Showing
 disassembly, decompiler output, and a sequence helped communicate that
 project's reverse engineering capabilities.
 
-The reusable idea is to choose imagery that makes the project understandable.
-A sequence helps when the relationship between steps matters. Other projects
-may benefit more from a single illustration, interface, output, or typographic
-composition. Even another analysis tool may call for a different approach.
+The reusable idea is to find references directly relevant to the project:
+images in its README, screenshots, examples, or recognizable outputs. Use
+those that help communicate it. If none fit, develop a relevant visual idea
+from what the project does. A sequence helps when the relationship between
+steps matters; other projects may benefit more from a single illustration,
+interface, output, or typographic composition.
 
 Treat the command, code, hex values, icons, and layout as example content.
 Depicted details in a new card should come from the project being featured.
