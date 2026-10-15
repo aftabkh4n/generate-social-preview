@@ -1,11 +1,17 @@
 ---
 name: generate-social-preview
-description: Create or revise repository-aware social preview images for GitHub, package pages, launch posts, and link cards. Use when Codex needs to inspect a software project, sharpen its short positioning, generate a branded 2:1 raster preview, explore color variants, adapt a supplied visual reference without copying it, or validate and save a social-card image non-destructively.
+description: Create or revise repository-aware social preview images for GitHub, package pages, launch posts, and link cards. Use when an agent needs to inspect a project, sharpen its short positioning, generate a branded 2:1 raster preview, explore color variants, adapt a supplied visual reference without copying it, or validate and save a social-card image non-destructively.
 ---
 
 # Generate Social Preview
 
-Produce a legible social card grounded in the project's purpose, audience, and identity. This applies to skills, libraries, developer tools, SaaS products, and other repositories. Route raster generation and editing through the `imagegen` skill.
+Produce a legible social card grounded in the project's purpose, audience, and identity. This applies to skills, libraries, developer tools, SaaS products, and other repositories.
+
+## Image Capabilities
+
+Use the agent's configured image-generation or image-editing tool and follow its instructions for prompts and reference images. No particular provider or companion skill is required. Use image viewing to inspect references and results, and resolve bundled resources relative to this skill's directory.
+
+If image generation is unavailable, complete the reference selection, copy, and generation prompt, then report that no image was generated. If image viewing or reference-image input is unavailable, explain that limitation rather than claiming visual inspection or use of image inputs.
 
 ## Workflow
 
@@ -28,11 +34,11 @@ Produce a legible social card grounded in the project's purpose, audience, and i
 9. Iterate one variable at a time: copy, palette, composition, or imagery.
 10. Save project-bound candidates inside the repository without overwriting an existing asset. Use a descriptive versioned name.
 11. Normalize the selected image to 1280x640 with `scripts/normalize-preview.sh` when the target is a GitHub social preview.
-12. Report the saved path, dimensions, final copy, style direction, palette, references used or the project-grounded visual idea, and whether the built-in image generator or an explicitly approved fallback was used.
+12. Report the saved path, dimensions, final copy, style direction, palette, references used or the project-grounded visual idea, and image tool used. If only a prompt was prepared, report that instead of claiming a saved image.
 
 ## Prompt Shape
 
-Use the image-generation skill's prompt schema. Include these constraints when relevant:
+Adapt this brief to the available image tool's input format. Include these constraints when relevant:
 
 ```text
 Use case: ads-marketing

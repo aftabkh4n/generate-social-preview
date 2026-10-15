@@ -1,8 +1,8 @@
 # Generate Social Preview
 
-A Codex skill for creating social preview images grounded in what a repository
-actually does. It reads the project, shapes concise copy, and produces a card
-that stays readable at thumbnail size.
+A reusable agent skill for creating social preview images grounded in what a
+repository actually does. It reads the project, shapes concise copy, and
+produces a card that stays readable at thumbnail size.
 
 Use it for GitHub repository previews, package pages, launch posts, and link
 cards for skills, libraries, developer tools, SaaS products, and other projects.
@@ -11,37 +11,50 @@ style reference.
 
 ## Install
 
-Clone this repository into your Codex skills directory:
+Install with the [Skills CLI](https://github.com/vercel-labs/skills), which
+supports Claude Code, Codex, Cursor, OpenCode, and other agents:
 
 ```bash
-git clone https://github.com/morluto/generate-social-preview.git \
-  "${CODEX_HOME:-$HOME/.codex}/skills/generate-social-preview"
+npx skills@latest add morluto/generate-social-preview
 ```
 
-If the skill is already installed, review or back up that directory before
-replacing it. Restart Codex after installation to load the skill.
+Choose your agent in the installer, or specify it explicitly, for example:
 
-The skill uses the `imagegen` skill for raster generation and editing. Image
-generation must be available in your Codex environment. The optional
-normalization helper needs Bash and either macOS `sips` or ImageMagick's
-`magick` command.
+```bash
+npx skills@latest add morluto/generate-social-preview --agent claude-code
+```
+
+Add `--global` to install for your user rather than the current project.
+The installer requires Node.js and npm. You can also copy the skill directory
+into your agent's supported skills location, keeping its scripts, references,
+and assets together.
+
+The skill follows the [Agent Skills format](https://agentskills.io/specification).
+Image generation and editing use your agent's configured tools; installing
+the skill does not add an image provider. Image viewing is needed for visual
+inspection. If generation is unavailable, the agent can still prepare the
+copy, reference choices, and a generation prompt, and will report that no
+image was generated.
+
+The optional normalization helper needs Bash and either macOS `sips` or
+ImageMagick's `magick` command.
 
 ## Use
 
-Open the repository you want to feature and ask Codex:
+Open the repository you want to feature and ask your agent:
 
 ```text
-Use $generate-social-preview to create a GitHub social preview for this repository.
+Use the generate-social-preview skill to create a GitHub social preview for this repository.
 ```
 
 You can provide a direction or constrain a revision:
 
 ```text
-Use $generate-social-preview with a Swiss technical direction and a warm paper palette.
+Use the generate-social-preview skill with a Swiss technical direction and a warm paper palette.
 ```
 
 ```text
-Use $generate-social-preview to revise this card. Change only the tagline;
+Use the generate-social-preview skill to revise this card. Change only the tagline;
 keep the product name, palette, and illustration unchanged.
 ```
 
@@ -91,10 +104,11 @@ use the composition that serves its own message.
 ## Normalize an existing image
 
 ```bash
-bash "${CODEX_HOME:-$HOME/.codex}/skills/generate-social-preview/scripts/normalize-preview.sh" \
+bash path/to/generate-social-preview/scripts/normalize-preview.sh \
   candidate.png social-preview-v1.png
 ```
 
+Replace `path/to/generate-social-preview` with the installed skill directory.
 The helper accepts an approximately 2:1 source, writes a 1280×640 PNG, and
 refuses to overwrite an existing output. It does not generate images or check
 their visual quality.
@@ -102,7 +116,7 @@ their visual quality.
 ## Repository contents
 
 - [SKILL.md](SKILL.md) — workflow, copy guidance, and visual checks.
-- [agents/openai.yaml](agents/openai.yaml) — Codex display metadata.
+- [agents/openai.yaml](agents/openai.yaml) — optional Codex display metadata.
 - [references/style-directions.md](references/style-directions.md) — art direction guidance.
 - [references/examples.md](references/examples.md) — project examples and attribution.
 - `assets/style-references/` — labeled visual references.
