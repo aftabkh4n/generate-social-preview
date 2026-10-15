@@ -5,8 +5,9 @@ actually does. It reads the project, shapes concise copy, chooses a visual
 direction, and produces a card that stays readable at thumbnail size.
 
 Use it for GitHub repository previews, package pages, launch posts, and link
-cards. It supports new images, revisions, palette variants, and adapting a
-supplied style reference.
+cards for skills, libraries, developer tools, SaaS products, and other projects.
+It supports new images, revisions, palette variants, and adapting a supplied
+style reference.
 
 ## Install
 
@@ -50,20 +51,24 @@ previews are normalized to a 1280×640 PNG after visual inspection.
 
 ## Visual directions
 
-The bundled [style guide](references/style-directions.md) covers retro
-editorial, Swiss technical, terminal collage, evidence workflow, and
-diagrammatic print directions. Choose the medium that makes the product's
-actual workflow or artifacts easiest to recognize.
+The bundled [style guide](references/style-directions.md) offers retro
+editorial, Swiss technical, terminal collage, and diagrammatic print as
+starting points. Choose what best communicates the project: typography, a
+symbol, an illustration, an interface, an output, or a sequence when useful.
 
-These images are **style references**, not templates to reproduce:
+These are [examples from specific projects](references/examples.md):
 
-| Retro editorial | Evidence workflow |
+| Open SaaS: retro editorial | REA: analysis artifacts and a sequence |
 | --- | --- |
 | ![Flat color blocks and pixel typography](assets/style-references/retro-editorial.png) | ![Command, inspection views, and an ordered workflow](assets/style-references/evidence-workflow.png) |
 
 Credit to [Vince Canger (@vincanger)](https://github.com/vincanger) for the
 Open SaaS artwork used as the retro editorial reference, shared in his original
 post, [How I promoted my open source repo to 6k stars in 6 months](https://dev.to/wasp/how-i-promoted-my-open-source-repo-to-6k-stars-in-6-months-3li9).
+
+The second reference was used for [REA](https://github.com/morluto/rea).
+Its workflow composition fits that example; each project's preview should
+use the composition that serves its own message.
 
 ## Normalize an existing image
 
@@ -81,5 +86,6 @@ their visual quality.
 - [SKILL.md](SKILL.md) — workflow, copy guidance, and visual checks.
 - [agents/openai.yaml](agents/openai.yaml) — Codex display metadata.
 - [references/style-directions.md](references/style-directions.md) — art direction guidance.
+- [references/examples.md](references/examples.md) — project examples and attribution.
 - `assets/style-references/` — labeled visual references.
 - [scripts/normalize-preview.sh](scripts/normalize-preview.sh) — image normalization helper.
