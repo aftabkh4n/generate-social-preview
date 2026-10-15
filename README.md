@@ -11,30 +11,38 @@ style reference.
 
 ## Install
 
-Install with the [Skills CLI](https://github.com/vercel-labs/skills), which
-supports Claude Code, Codex, Cursor, OpenCode, and other agents:
+Install for Cursor, Claude Code, Codex, GitHub Copilot, Gemini CLI, Cline,
+Windsurf, Amp, and other supported agents with the
+[Skills CLI](https://github.com/vercel-labs/skills):
 
 ```bash
-npx skills@latest add morluto/generate-social-preview
+npx skills add morluto/generate-social-preview
 ```
 
-Choose your agent in the installer, or specify it explicitly, for example:
+In Claude Code, you can use the plugin marketplace for the skill's slash
+command and update management:
 
-```bash
-npx skills@latest add morluto/generate-social-preview --agent claude-code
+```text
+/plugin marketplace add morluto/generate-social-preview
+/plugin install generate-social-preview@generate-social-preview
 ```
 
-Add `--global` to install for your user rather than the current project.
-The installer requires Node.js and npm. You can also copy the skill directory
-into your agent's supported skills location, keeping its scripts, references,
-and assets together.
+After installation, invoke `/generate-social-preview:generate-social-preview`.
+For automatic updates, open `/plugin`, select the marketplace under
+**Marketplaces**, and choose **Enable auto-update**. Choose one installation
+method per agent to avoid duplicate copies.
 
-The skill follows the [Agent Skills format](https://agentskills.io/specification).
-Image generation and editing use your agent's configured tools; installing
-the skill does not add an image provider. Image viewing is needed for visual
-inspection. If generation is unavailable, the agent can still prepare the
-copy, reference choices, and a generation prompt, and will report that no
-image was generated.
+The Skills CLI requires Node.js and npm. Select your agent in the installer,
+or pass `--agent claude-code`, for example. Add `--global` for a user-wide
+installation.
+
+## Image tools
+
+Use whatever image-generation and editing tools are available in your agent.
+The skill works with the host's tools, APIs, CLIs, or installed image skills.
+Use image viewing to inspect references and results. If generation is
+unavailable, the agent can still prepare the copy, reference choices, and a
+generation prompt.
 
 The optional normalization helper needs Bash and either macOS `sips` or
 ImageMagick's `magick` command.
@@ -116,6 +124,7 @@ their visual quality.
 ## Repository contents
 
 - [SKILL.md](SKILL.md) — workflow, copy guidance, and visual checks.
+- `.claude-plugin/` — Claude Code plugin and marketplace manifests.
 - [agents/openai.yaml](agents/openai.yaml) — optional Codex display metadata.
 - [references/style-directions.md](references/style-directions.md) — art direction guidance.
 - [references/examples.md](references/examples.md) — project examples and attribution.

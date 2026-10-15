@@ -9,7 +9,7 @@ Produce a legible social card grounded in the project's purpose, audience, and i
 
 ## Image Capabilities
 
-Use the agent's configured image-generation or image-editing tool and follow its instructions for prompts and reference images. No particular provider or companion skill is required. Use image viewing to inspect references and results, and resolve bundled resources relative to this skill's directory.
+Use the image-generation and editing tools available in the host: native tools, configured APIs or CLIs, or installed image skills. Follow the chosen tool's instructions for prompts and reference images. Use image viewing to inspect references and results, and resolve bundled resources relative to this skill's directory.
 
 If image generation is unavailable, complete the reference selection, copy, and generation prompt, then report that no image was generated. If image viewing or reference-image input is unavailable, explain that limitation rather than claiming visual inspection or use of image inputs.
 

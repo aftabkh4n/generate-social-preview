@@ -1,0 +1,15 @@
+{
+  "name": "generate-social-preview",
+  "metadata": {
+    "description": "Social preview generation using references from the project and available image tools."
+  },
+  "owner": {
+    "name": "morluto"
+  },
+  "plugins": [
+    {
+      "name": "generate-social-preview",
+      "source": "./"
+    }
+  ]
+}
