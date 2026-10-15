@@ -1,10 +1,8 @@
 # Generate Social Preview
 
 A Codex skill for creating social preview images grounded in what a repository
-actually does. It looks for relevant images and examples in the README, docs,
-and repository, shapes concise copy, and produces a card that stays readable
-at thumbnail size. When existing material does not fit, it develops a visual
-idea grounded in the project's purpose.
+actually does. It reads the project, shapes concise copy, and produces a card
+that stays readable at thumbnail size.
 
 Use it for GitHub repository previews, package pages, launch posts, and link
 cards for skills, libraries, developer tools, SaaS products, and other projects.
@@ -50,6 +48,24 @@ keep the product name, palette, and illustration unchanged.
 By default, the skill produces one candidate, checks the copy and composition,
 and saves a versioned image without overwriting an existing asset. GitHub
 previews are normalized to a 1280×640 PNG after visual inspection.
+
+## How it uses project references
+
+Ground the imagery in the project, then choose the composition.
+
+1. **Find relevant material.** Follow image links in the README and docs, and
+   inspect screenshots, illustrations, demos, example outputs, and brand assets
+   in the repository.
+2. **Use what fits.** Pass useful images to the generator as project references,
+   drawing on recognizable details, outputs, or brand cues. Existing material
+   earns its place by helping communicate the project.
+3. **Develop an idea when needed.** If existing images do not fit, build a visual
+   idea from the project's purpose, examples, or domain. A skill, library, and
+   SaaS product may each call for a different approach.
+
+Project references inform what the preview shows; style references inform how
+it looks. The composition can be a single image, typography, an interface, or
+a sequence when the steps help explain the project.
 
 ## Visual directions
 
