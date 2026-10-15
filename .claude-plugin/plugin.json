@@ -1,11 +1,10 @@
 {
   "name": "generate-social-preview",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create social preview images grounded in a project's own images, examples, and purpose.",
   "author": {
     "name": "morluto",
     "url": "https://github.com/morluto"
   },
-  "repository": "https://github.com/morluto/generate-social-preview",
-  "skills": ["./"]
+  "repository": "https://github.com/morluto/generate-social-preview"
 }

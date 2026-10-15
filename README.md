@@ -36,6 +36,17 @@ The Skills CLI requires Node.js and npm. Select your agent in the installer,
 or pass `--agent claude-code`, for example. Add `--global` for a user-wide
 installation.
 
+In Codex, install through its native plugin marketplace:
+
+```bash
+codex features enable plugins
+codex plugin marketplace add morluto/generate-social-preview
+codex plugin add generate-social-preview@generate-social-preview
+```
+
+Start a new Codex session after installation and invoke
+`$generate-social-preview:generate-social-preview`.
+
 ## Image tools
 
 Use whatever image-generation and editing tools are available in your agent.
@@ -90,16 +101,16 @@ a sequence when the steps help explain the project.
 
 ## Visual directions
 
-The bundled [style guide](references/style-directions.md) offers retro
+The bundled [style guide](skills/generate-social-preview/references/style-directions.md) offers retro
 editorial, Swiss technical, terminal collage, and diagrammatic print as
 starting points. Choose what best communicates the project: typography, a
 symbol, an illustration, an interface, an output, or a sequence when useful.
 
-These are [examples from specific projects](references/examples.md):
+These are [examples from specific projects](skills/generate-social-preview/references/examples.md):
 
 | Open SaaS: retro editorial | REA: analysis artifacts and a sequence |
 | --- | --- |
-| ![Flat color blocks and pixel typography](assets/style-references/retro-editorial.png) | ![Command, inspection views, and an ordered workflow](assets/style-references/evidence-workflow.png) |
+| ![Flat color blocks and pixel typography](skills/generate-social-preview/assets/style-references/retro-editorial.png) | ![Command, inspection views, and an ordered workflow](skills/generate-social-preview/assets/style-references/evidence-workflow.png) |
 
 Credit to [Vince Canger (@vincanger)](https://github.com/vincanger) for the
 Open SaaS artwork used as the retro editorial reference, shared in his original
@@ -116,17 +127,20 @@ bash path/to/generate-social-preview/scripts/normalize-preview.sh \
   candidate.png social-preview-v1.png
 ```
 
-Replace `path/to/generate-social-preview` with the installed skill directory.
+Replace `path/to/generate-social-preview` with the installed skill directory
+(`skills/generate-social-preview/` in this repository).
 The helper accepts an approximately 2:1 source, writes a 1280×640 PNG, and
 refuses to overwrite an existing output. It does not generate images or check
 their visual quality.
 
 ## Repository contents
 
-- [SKILL.md](SKILL.md) — workflow, copy guidance, and visual checks.
+- [SKILL.md](skills/generate-social-preview/SKILL.md) — workflow, copy guidance, and visual checks.
 - `.claude-plugin/` — Claude Code plugin and marketplace manifests.
-- [agents/openai.yaml](agents/openai.yaml) — optional Codex display metadata.
-- [references/style-directions.md](references/style-directions.md) — art direction guidance.
-- [references/examples.md](references/examples.md) — project examples and attribution.
-- `assets/style-references/` — labeled visual references.
-- [scripts/normalize-preview.sh](scripts/normalize-preview.sh) — image normalization helper.
+- `.codex-plugin/` — Codex plugin manifest.
+- `.agents/plugins/marketplace.json` — Codex marketplace catalog.
+- [agents/openai.yaml](skills/generate-social-preview/agents/openai.yaml) — optional Codex display metadata.
+- [references/style-directions.md](skills/generate-social-preview/references/style-directions.md) — art direction guidance.
+- [references/examples.md](skills/generate-social-preview/references/examples.md) — project examples and attribution.
+- `skills/generate-social-preview/assets/style-references/` — labeled visual references.
+- [scripts/normalize-preview.sh](skills/generate-social-preview/scripts/normalize-preview.sh) — image normalization helper.

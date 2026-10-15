@@ -1,0 +1,20 @@
+{
+  "name": "generate-social-preview",
+  "interface": {
+    "displayName": "Generate Social Preview"
+  },
+  "plugins": [
+    {
+      "name": "generate-social-preview",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Creativity"
+    }
+  ]
+}
