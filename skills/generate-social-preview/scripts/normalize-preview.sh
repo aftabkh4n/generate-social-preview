@@ -24,14 +24,16 @@ if command -v sips >/dev/null 2>&1; then
   width=$(sips -g pixelWidth "$input_path" | awk '/pixelWidth:/ { print $2 }')
   height=$(sips -g pixelHeight "$input_path" | awk '/pixelHeight:/ { print $2 }')
 elif command -v magick >/dev/null 2>&1; then
+  # Read only the first frame, flattened onto its full canvas, so animated
+  # and optimized GIF/WebP inputs report and keep their real dimensions.
   tool=magick
-  read -r width height < <(magick identify -format '%w %h\n' "$input_path[0]")
-elif command -v convert >/dev/null 2>&1 && command -v identify >/dev/null 2>&1; then
+  read -r width height < <(magick "$input_path[0]" -background none -flatten -format '%w %h\n' info:)
+elif command -v convert >/dev/null 2>&1; then
   # ImageMagick 6, still the default on many Linux distributions.
   tool=convert
-  read -r width height < <(identify -format '%w %h\n' "$input_path[0]")
+  read -r width height < <(convert "$input_path[0]" -background none -flatten -format '%w %h\n' info:)
 else
-  echo "Normalization requires macOS sips or ImageMagick (magick, or convert and identify)." >&2
+  echo "Normalization requires macOS sips or ImageMagick (magick or convert)." >&2
   exit 69
 fi
 
@@ -67,10 +69,10 @@ case "$tool" in
     sips -s format png -z 640 1280 "$temporary_output" >/dev/null
     ;;
   magick)
-    magick "$input_path[0]" -resize '1280x640!' "$temporary_output"
+    magick "$input_path[0]" -background none -flatten -resize '1280x640!' "$temporary_output"
     ;;
   convert)
-    convert "$input_path[0]" -resize '1280x640!' "$temporary_output"
+    convert "$input_path[0]" -background none -flatten -resize '1280x640!' "$temporary_output"
     ;;
 esac
 
